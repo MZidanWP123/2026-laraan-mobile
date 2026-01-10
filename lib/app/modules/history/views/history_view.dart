@@ -7,6 +7,7 @@ import 'package:frontend_waste_management/app/widgets/vertical_gap.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class HistoryView extends GetView<HistoryController> {
   const HistoryView({Key? key}) : super(key: key);

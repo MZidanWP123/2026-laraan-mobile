@@ -19,6 +19,7 @@ import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class MapsView extends StatefulWidget {
   const MapsView({super.key});

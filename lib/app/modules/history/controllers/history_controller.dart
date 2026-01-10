@@ -7,6 +7,7 @@ import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
 import 'package:frontend_waste_management/core/values/const.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 import 'package:get/get_rx/get_rx.dart';
 
 class HistoryController extends GetxController {

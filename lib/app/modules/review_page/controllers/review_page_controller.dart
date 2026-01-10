@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class ReviewPageController extends GetxController {
   late ReviewModel data;

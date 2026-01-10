@@ -16,6 +16,7 @@ import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
 import 'package:latlng_picker/latlng_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class CheckoutView extends GetView<CheckoutController> {
   const CheckoutView({Key? key}) : super(key: key);

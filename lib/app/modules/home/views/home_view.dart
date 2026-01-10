@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
-import 'package:frontend_waste_management/app/data/services/local_notifications.dart';
+//import 'package:flutter/widgets.dart';
+//import 'package:frontend_waste_management/app/data/services/local_notifications.dart';
 import 'package:frontend_waste_management/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_waste_management/app/modules/home/views/widgets/article_tiles.dart';
@@ -13,6 +13,7 @@ import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
