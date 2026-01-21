@@ -26,7 +26,7 @@ dependencies:
   flutter_map_location_marker: ^8.1.0
   flutter_map_supercluster: ^5.0.0-dev.1
   flutter_map_heatmap: ^0.0.7
-  flutter_map_compass: ^1.0.3
+  flutter_map_compass: ^1.1.1
   flutter_launcher_icons: ^0.13.1
   flutter_map_cancellable_tile_provider: ^2.0.0
   image_picker: ^1.1.2
@@ -46,7 +46,7 @@ dependencies:
   image: ^4.5.3
   sensors_plus: ^6.1.1
   flutter_local_notifications: ^18.0.1
-  workmanager: ^0.5.2
+  workmanager: ^0.6.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0

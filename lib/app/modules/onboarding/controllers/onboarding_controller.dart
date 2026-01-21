@@ -16,12 +16,14 @@ class OnboardingController extends GetxController {
       lastIndex = false;
     }
     print("locale 3 : ${Get.locale}");
-    Get.updateLocale(Get.locale!);
+    // Moved to onReady() to avoid "setState called during build" error
   }
 
   @override
   void onReady() {
     super.onReady();
+    // Update locale after widget is built to prevent rebuild during build phase
+    Get.updateLocale(Get.locale!);
   }
 
   @override
