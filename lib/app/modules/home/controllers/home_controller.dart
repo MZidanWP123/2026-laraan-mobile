@@ -7,7 +7,7 @@ import 'package:frontend_waste_management/app/data/models/point_model.dart';
 import 'package:frontend_waste_management/app/data/models/predict_model.dart';
 import 'package:frontend_waste_management/app/data/services/api_service.dart';
 import 'package:frontend_waste_management/app/data/services/location_handler.dart';
-import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
+//import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
 import 'package:frontend_waste_management/app/data/services/token_chacker.dart';
 import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
 import 'package:frontend_waste_management/core/values/const.dart';
@@ -18,8 +18,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:overlay_kit/overlay_kit.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController

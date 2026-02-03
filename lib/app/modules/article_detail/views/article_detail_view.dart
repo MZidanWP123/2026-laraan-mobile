@@ -6,8 +6,8 @@ import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../controllers/article_detail_controller.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class ArticleDetailView extends GetView<ArticleDetailController> {
   const ArticleDetailView({super.key});

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:frontend_waste_management/app/modules/splash/controllers/splash_controller.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class SplashView extends GetView<SplashController> {
   SplashView({Key? key}) : super(key: key);

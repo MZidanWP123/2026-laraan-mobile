@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:frontend_waste_management/app/data/services/api_service.dart';
-import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
+//import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
 import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
 import 'package:frontend_waste_management/core/values/const.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class RegisterController extends GetxController {
   //TODO: Implement RegisterController
@@ -112,12 +112,32 @@ class RegisterController extends GetxController {
       );
       if (response.statusCode != 200) {
         print('Registration failed: ${response.body}');
-        // var message = await translate(jsonDecode(response.body)['detail']);
-        var message = jsonDecode(response.body)['detail'];
+
+        String errorMessage;
+        try {
+          // Try to parse as JSON first
+          final jsonResponse = jsonDecode(response.body);
+          errorMessage = jsonResponse['detail'] ?? 'Registration failed';
+        } catch (e) {
+          // If not JSON, use a generic error or truncated response
+          print('Failed to parse error response as JSON: $e');
+
+          // Log the full response for debugging
+          if (response.body.length > 200) {
+            print(
+                'Response body (truncated): ${response.body.substring(0, 200)}...');
+          } else {
+            print('Response body: ${response.body}');
+          }
+
+          // For user-facing message, use generic error instead of backend traceback
+          errorMessage =
+              AppLocalizations.of(Get.context!)!.register_error_message;
+        }
 
         showFailedSnackbar(
-            AppLocalizations.of(Get.context!)!.register_error, message);
-        throw ('Registration error: ${response.body}');
+            AppLocalizations.of(Get.context!)!.register_error, errorMessage);
+        return; // Don't throw, just return to prevent further errors
       }
       showSuccessSnackbar(
         AppLocalizations.of(Get.context!)!.register_success,

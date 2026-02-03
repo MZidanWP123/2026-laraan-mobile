@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:frontend_waste_management/app/data/models/onboarding_model.dummy.dart';
 import 'package:frontend_waste_management/app/widgets/app_text.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class CustomCarouselView extends StatelessWidget {
   const CustomCarouselView({super.key, required this.index});

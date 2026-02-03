@@ -6,8 +6,8 @@ import 'package:frontend_waste_management/app/widgets/icon_button.dart';
 import 'package:frontend_waste_management/app/widgets/vertical_gap.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:frontend_waste_management/core/values/app_icon_name.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class ItemTiles extends StatelessWidget {
   const ItemTiles({super.key, required this.countObject});

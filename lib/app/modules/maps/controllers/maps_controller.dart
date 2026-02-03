@@ -8,7 +8,7 @@ import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:flutter_map_supercluster/flutter_map_supercluster.dart';
 import 'package:frontend_waste_management/app/data/models/sampah_detail_model.dart';
 import 'package:frontend_waste_management/app/data/services/api_service.dart';
-import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
+//import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
 import 'package:frontend_waste_management/app/data/services/token_chacker.dart';
 import 'package:frontend_waste_management/app/widgets/app_icon.dart';
 import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
@@ -16,8 +16,8 @@ import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:frontend_waste_management/core/values/const.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class MapsController extends GetxController {
   //TODO: Implement MapsController
@@ -84,7 +84,16 @@ class MapsController extends GetxController {
       final response = await ApiServices().get(
           "${UrlConstants.sampah}?data_type=${filterDataType.value}&status=${filterStatus.value}");
       if (response.statusCode != 200) {
-        final message = jsonDecode(response.body)['detail'];
+        String message;
+        try {
+          // Try to parse JSON response
+          final jsonResponse = jsonDecode(response.body);
+          message = jsonResponse['detail'] ?? 'Unknown error';
+        } catch (e) {
+          // If JSON parsing fails, the backend returned a non-JSON response
+          message = 'Server error: ${response.statusCode}';
+          debugPrint('Non-JSON response from server: ${response.body}');
+        }
         showFailedSnackbar(
           AppLocalizations.of(Get.context!)!.waste_data_error,
           message,
@@ -113,7 +122,16 @@ class MapsController extends GetxController {
     final response = await ApiServices().get(url);
 
     if (response.statusCode != 200) {
-      final message = jsonDecode(response.body)['detail'];
+      String message;
+      try {
+        // Try to parse JSON response
+        final jsonResponse = jsonDecode(response.body);
+        message = jsonResponse['detail'] ?? 'Unknown error';
+      } catch (e) {
+        // If JSON parsing fails, the backend returned a non-JSON response
+        message = 'Server error: ${response.statusCode}';
+        debugPrint('Non-JSON response from server: ${response.body}');
+      }
       showFailedSnackbar(
         AppLocalizations.of(Get.context!)!.waste_time_series_error,
         message,

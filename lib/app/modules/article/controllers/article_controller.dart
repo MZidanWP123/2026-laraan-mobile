@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:frontend_waste_management/app/data/models/article_model.dart';
 import 'package:frontend_waste_management/app/data/services/api_service.dart';
-import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
+//import 'package:frontend_waste_management/app/data/services/simply_translate.dart';
 import 'package:frontend_waste_management/app/data/services/token_chacker.dart';
 import 'package:frontend_waste_management/core/values/const.dart';
 import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 
 class ArticleController extends GetxController {

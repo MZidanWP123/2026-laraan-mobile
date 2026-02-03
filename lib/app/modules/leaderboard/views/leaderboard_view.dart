@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_waste_management/app/modules/leaderboard/controllers/leaderboard_controller.dart';
 import 'package:frontend_waste_management/app/modules/leaderboard/views/leaderboard_list_tile.dart';
-import 'package:frontend_waste_management/app/widgets/app_icon.dart';
+//import 'package:frontend_waste_management/app/widgets/app_icon.dart';
 import 'package:frontend_waste_management/app/widgets/app_text.dart';
-import 'package:frontend_waste_management/app/widgets/centered_text_button.dart';
+//import 'package:frontend_waste_management/app/widgets/centered_text_button.dart';
 import 'package:frontend_waste_management/app/widgets/horizontal_gap.dart';
 import 'package:frontend_waste_management/app/widgets/vertical_gap.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
-import 'package:frontend_waste_management/core/values/app_icon_name.dart';
+//import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class LeaderboardView extends GetView<LeaderboardController> {
   const LeaderboardView({Key? key}) : super(key: key);

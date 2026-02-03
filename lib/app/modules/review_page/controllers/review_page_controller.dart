@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:frontend_waste_management/app/data/models/review_model.dart';
 import 'package:frontend_waste_management/app/data/services/api_service.dart';
 import 'package:frontend_waste_management/app/data/services/local_notifications.dart';
@@ -8,8 +9,8 @@ import 'package:frontend_waste_management/core/values/const.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class ReviewPageController extends GetxController {
   late ReviewModel data;
@@ -66,7 +67,34 @@ class ReviewPageController extends GetxController {
     try {
       final raw =
           await ApiServices().postSampahV2(UrlConstants.userSampah, payload);
-      final res = jsonDecode(raw);
+
+      // Try to parse as JSON
+      Map<String, dynamic> res;
+      try {
+        res = jsonDecode(raw);
+      } on FormatException {
+        // Backend returned non-JSON (probably HTML error page)
+        debugPrint('❌ Backend Error: Response is not JSON');
+        debugPrint('Response length: ${raw.length} characters');
+        debugPrint(
+            'First 500 chars: ${raw.substring(0, raw.length > 500 ? 500 : raw.length)}');
+
+        final lang = GetStorage().read('language');
+        final id = lang == 'id';
+        final ja = lang == 'ja';
+
+        final message = id
+            ? 'Terjadi kesalahan pada server. Silakan coba lagi nanti.'
+            : ja
+                ? 'サーバーエラーが発生しました。後でもう一度お試しください。'
+                : 'A server error occurred. Please try again later.';
+
+        await _notify(
+          success: false,
+          message: message,
+        );
+        return;
+      }
 
       if (res.containsKey('detail')) {
         await _notify(
@@ -81,9 +109,19 @@ class ReviewPageController extends GetxController {
         );
       }
     } catch (e) {
+      final lang = GetStorage().read('language');
+      final id = lang == 'id';
+      final ja = lang == 'ja';
+
+      final message = id
+          ? 'Gagal mengunggah laporan: ${e.toString()}'
+          : ja
+              ? 'レポートのアップロードに失敗しました: ${e.toString()}'
+              : 'Failed to upload report: ${e.toString()}';
+
       await _notify(
         success: false,
-        message: e.toString(),
+        message: message,
       );
     }
   }

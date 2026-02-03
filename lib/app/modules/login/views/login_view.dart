@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_waste_management/app/modules/login/controllers/login_controller.dart';
 import 'package:frontend_waste_management/app/widgets/app_text.dart';
 import 'package:frontend_waste_management/app/widgets/centered_text_button.dart';
-import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
+//import 'package:frontend_waste_management/app/widgets/custom_snackbar.dart';
 import 'package:frontend_waste_management/app/widgets/form.dart';
 import 'package:frontend_waste_management/app/widgets/icon_button.dart';
 import 'package:frontend_waste_management/app/widgets/text_button.dart';
@@ -10,8 +10,8 @@ import 'package:frontend_waste_management/app/widgets/vertical_gap.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:frontend_waste_management/core/values/app_icon_name.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);

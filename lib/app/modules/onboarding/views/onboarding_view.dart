@@ -7,8 +7,8 @@ import 'package:frontend_waste_management/app/widgets/text_button.dart';
 import 'package:frontend_waste_management/app/widgets/vertical_gap.dart';
 import 'package:frontend_waste_management/core/theme/theme_data.dart';
 import 'package:get/get.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:frontend_waste_management/l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:frontend_waste_management/l10n/app_localizations.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
   const OnboardingView({Key? key}) : super(key: key);
